@@ -1,0 +1,884 @@
+<section class="content">
+    <div class="container-fluid">
+
+        <!-- breadcrumb -->
+        <div class="block-header">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <ul class="breadcrumb breadcrumb-style ">
+                        <li class="breadcrumb-item">
+                            <h4 class="page-title">Dashboard</h4>
+                        </li>
+                        <li class="breadcrumb-item bcrumb-1">
+                            <a routerLink="/dashboard/main">
+                                <i class="fas fa-home"></i> Home</a>
+                        </li>
+                        <!-- <li class="breadcrumb-item active">Dashboard</li> -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- end breadcrumb -->
+
+        <div class="row">
+            <div class="col-md-12 col-lg-10 mt-2">
+                <!-- order history & profit chart -->
+                <div class="row">
+                    <div class="col-sm-12 col-lg-6">
+                        <div class="card">
+                            <div class="header">
+                                <h2><strong>Order History</strong></h2>
+                                <ul class="header-dropdown m-r--5">
+                                    Profit Chart
+                                </ul>
+                            </div>
+                            <div class="body">
+                                <div echarts [options]="line_bar_chart1" class="deshboard-echart-height"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-lg-6">
+                        <div class="card">
+                            <div class="header">
+                                <h2><strong>Order History</strong></h2>
+                                <ul class="header-dropdown m-r--5">
+                                    Order Chart
+                                </ul>
+                            </div>
+                            <div class="body">
+                                <div echarts [options]="line_bar_chart2" class="deshboard-echart-height"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end order history & profit chart -->
+
+                <!-- //orders table -->
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="card">
+                            <div class="header">
+                                <h2>
+                                    <strong>Orders</strong></h2>
+                                <ul class="header-dropdown m-r-5">
+                                    <a routerLink="/order/main">View All</a>
+                                </ul>
+                            </div>
+                            <div class="body">
+                                <div class="media-list position-relative chat-list" style="max-height: 480px;" [perfectScrollbar]>
+                                    <div class="table-responsive">
+                                        <table class="table table-hover table-xl mb-0">
+                                            <thead>
+                                                <tr>
+                                                    <th class="border-top-0">Order Number</th>
+                                                    <th class="border-top-0"></th>
+                                                    <th class="border-top-0">Status</th>
+                                                    <th class="border-top-0">Price</th>
+                                                    <th class="border-top-0">Profit</th>
+                                                    <th class="border-top-0">Date</th>
+                                                    <th class="border-top-0">Alternatives</th>
+                                                    <th class="border-top-0">Order Now</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="text-truncate col-blue" >171-3781991-3548364</td>
+                                                    <td class=" table-img">
+                                                        <img src="assets/images/user/user1.jpg" alt="">
+                                                    </td>
+                                                    <td class="text-truncate">
+                                                        <span class="label bg-green shadow-style m-r-5">InTheHouse</span>
+                                                    </td>
+                                                    <td class="text-truncate">
+                                                        AED 228.96
+                                                    </td>
+                                                    <td class="text-truncate">
+                                                        <span class="badge col-green m-r-5">0</span>AED 57.30
+                                                    </td>
+                                                    <td class="text-truncate">
+                                                        2 days ago
+                                                    </td>
+                                                    <td class="text-truncate">
+                                                        <span class="label bg-teal shadow-style m-r-5">Ebay</span>
+                                                        <span class="label bg-orange shadow-style m-r-5">AliEx</span>
+                                                    </td>
+                                                    <td class="text-truncate">
+                                                        <span class="badge col-green m-r-5">Completed</span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-truncate col-blue" >171-3781991-3548364</td>
+                                                    <td class=" table-img">
+                                                        <img src="assets/images/user/user1.jpg" alt="">
+                                                    </td>
+                                                    <td class="text-truncate">
+                                                        <span class="label bg-cyan shadow-style m-r-5">Delivered</span>
+                                                    </td>
+                                                    <td class="text-truncate">
+                                                        AED 228.96
+                                                    </td>
+                                                    <td class="text-truncate">
+                                                        <span class="badge col-green m-r-5">0</span>AED 57.30
+                                                    </td>
+                                                    <td class="text-truncate">
+                                                        2 days ago
+                                                    </td>
+                                                    <td class="text-truncate">
+                                                        <span class="label bg-teal shadow-style m-r-5">Ebay</span>
+                                                        <span class="label bg-orange shadow-style m-r-5">AliEx</span>
+                                                    </td>
+                                                    <td class="text-truncate">
+                                                        <span class="badge col-green m-r-5">Completed</span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-truncate col-blue" >171-3781991-3548364</td>
+                                                    <td class=" table-img">
+                                                        <img src="assets/images/user/user1.jpg" alt="">
+                                                    </td>
+                                                    <td class="text-truncate">
+                                                        <span class="badge col-brown m-r-5">Sold</span>
+                                                    </td>
+                                                    <td class="text-truncate">
+                                                        AED 228.96
+                                                    </td>
+                                                    <td class="text-truncate">
+                                                        <span class="badge col-green m-r-5">0</span>AED 57.30
+                                                    </td>
+                                                    <td class="text-truncate">
+                                                        2 days ago
+                                                    </td>
+                                                    <td class="text-truncate">
+                                                        <span class="label bg-teal shadow-style m-r-5">Ebay</span>
+                                                        <span class="label bg-orange shadow-style m-r-5">AliEx</span>
+                                                    </td>
+                                                    <td class="text-truncate">
+                                                        <a class="col-blue">Order Now</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-truncate col-blue" >171-3781991-3548364</td>
+                                                    <td class=" table-img">
+                                                        <img src="assets/images/user/user1.jpg" alt="">
+                                                    </td>
+                                                    <td class="text-truncate">
+                                                        <span class="label bg-green shadow-style m-r-5">InTheHouse</span>
+                                                    </td>
+                                                    <td class="text-truncate">
+                                                        AED 228.96
+                                                    </td>
+                                                    <td class="text-truncate">
+                                                        <span class="badge col-green m-r-5">0</span>AED 57.30
+                                                    </td>
+                                                    <td class="text-truncate">
+                                                        2 days ago
+                                                    </td>
+                                                    <td class="text-truncate">
+                                                        <span class="label bg-teal shadow-style m-r-5">Ebay</span>
+                                                        <span class="label bg-orange shadow-style m-r-5">AliEx</span>
+                                                    </td>
+                                                    <td class="text-truncate">
+                                                        <span class="badge col-green m-r-5">Completed</span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-truncate col-blue" >171-3781991-3548364</td>
+                                                    <td class=" table-img">
+                                                        <img src="assets/images/user/user1.jpg" alt="">
+                                                    </td>
+                                                    <td class="text-truncate">
+                                                        <span class="label bg-green shadow-style m-r-5">InTheHouse</span>
+                                                    </td>
+                                                    <td class="text-truncate">
+                                                        AED 228.96
+                                                    </td>
+                                                    <td class="text-truncate">
+                                                        <span class="badge col-green m-r-5">0</span>AED 57.30
+                                                    </td>
+                                                    <td class="text-truncate">
+                                                        2 days ago
+                                                    </td>
+                                                    <td class="text-truncate">
+                                                        <span class="label bg-teal shadow-style m-r-5">Ebay</span>
+                                                        <span class="label bg-orange shadow-style m-r-5">AliEx</span>
+                                                    </td>
+                                                    <td class="text-truncate">
+                                                        <span class="badge col-green m-r-5">Completed</span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-truncate col-blue" >171-3781991-3548364</td>
+                                                    <td class=" table-img">
+                                                        <img src="assets/images/user/user1.jpg" alt="">
+                                                    </td>
+                                                    <td class="text-truncate">
+                                                        <span class="label bg-cyan shadow-style m-r-5">Delivered</span>
+                                                    </td>
+                                                    <td class="text-truncate">
+                                                        AED 228.96
+                                                    </td>
+                                                    <td class="text-truncate">
+                                                        <span class="badge col-green m-r-5">0</span>AED 57.30
+                                                    </td>
+                                                    <td class="text-truncate">
+                                                        2 days ago
+                                                    </td>
+                                                    <td class="text-truncate">
+                                                        <span class="label bg-teal shadow-style m-r-5">Ebay</span>
+                                                        <span class="label bg-orange shadow-style m-r-5">AliEx</span>
+                                                    </td>
+                                                    <td class="text-truncate">
+                                                        <span class="badge col-green m-r-5">Completed</span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-truncate col-blue" >171-3781991-3548364</td>
+                                                    <td class=" table-img">
+                                                        <img src="assets/images/user/user1.jpg" alt="">
+                                                    </td>
+                                                    <td class="text-truncate">
+                                                        <span class="label bg-cyan shadow-style m-r-5">Delivered</span>
+                                                    </td>
+                                                    <td class="text-truncate">
+                                                        AED 228.96
+                                                    </td>
+                                                    <td class="text-truncate">
+                                                        <span class="badge col-green m-r-5">0</span>AED 57.30
+                                                    </td>
+                                                    <td class="text-truncate">
+                                                        2 days ago
+                                                    </td>
+                                                    <td class="text-truncate">
+                                                        <span class="label bg-teal shadow-style m-r-5">Ebay</span>
+                                                        <span class="label bg-orange shadow-style m-r-5">AliEx</span>
+                                                    </td>
+                                                    <td class="text-truncate">
+                                                        <span class="badge col-green m-r-5">Completed</span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-truncate col-blue" >171-3781991-3548364</td>
+                                                    <td class=" table-img">
+                                                        <img src="assets/images/user/user1.jpg" alt="">
+                                                    </td>
+                                                    <td class="text-truncate">
+                                                        <span class="label bg-cyan shadow-style m-r-5">Delivered</span>
+                                                    </td>
+                                                    <td class="text-truncate">
+                                                        AED 228.96
+                                                    </td>
+                                                    <td class="text-truncate">
+                                                        <span class="badge col-green m-r-5">0</span>AED 57.30
+                                                    </td>
+                                                    <td class="text-truncate">
+                                                        2 days ago
+                                                    </td>
+                                                    <td class="text-truncate">
+                                                        <span class="label bg-teal shadow-style m-r-5">Ebay</span>
+                                                        <span class="label bg-orange shadow-style m-r-5">AliEx</span>
+                                                    </td>
+                                                    <td class="text-truncate">
+                                                        <span class="badge col-green m-r-5">Completed</span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-truncate col-blue" >171-3781991-3548364</td>
+                                                    <td class=" table-img">
+                                                        <img src="assets/images/user/user1.jpg" alt="">
+                                                    </td>
+                                                    <td class="text-truncate">
+                                                        <span class="label bg-cyan shadow-style m-r-5">Delivered</span>
+                                                    </td>
+                                                    <td class="text-truncate">
+                                                        AED 228.96
+                                                    </td>
+                                                    <td class="text-truncate">
+                                                        <span class="badge col-green m-r-5">0</span>AED 57.30
+                                                    </td>
+                                                    <td class="text-truncate">
+                                                        2 days ago
+                                                    </td>
+                                                    <td class="text-truncate">
+                                                        <span class="label bg-teal shadow-style m-r-5">Ebay</span>
+                                                        <span class="label bg-orange shadow-style m-r-5">AliEx</span>
+                                                    </td>
+                                                    <td class="text-truncate">
+                                                        <span class="badge col-green m-r-5">Completed</span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-truncate col-blue" >171-3781991-3548364</td>
+                                                    <td class=" table-img">
+                                                        <img src="assets/images/user/user1.jpg" alt="">
+                                                    </td>
+                                                    <td class="text-truncate">
+                                                        <span class="label bg-cyan shadow-style m-r-5">Delivered</span>
+                                                    </td>
+                                                    <td class="text-truncate">
+                                                        AED 228.96
+                                                    </td>
+                                                    <td class="text-truncate">
+                                                        <span class="badge col-green m-r-5">0</span>AED 57.30
+                                                    </td>
+                                                    <td class="text-truncate">
+                                                        2 days ago
+                                                    </td>
+                                                    <td class="text-truncate">
+                                                        <span class="label bg-teal shadow-style m-r-5">Ebay</span>
+                                                        <span class="label bg-orange shadow-style m-r-5">AliEx</span>
+                                                    </td>
+                                                    <td class="text-truncate">
+                                                        <span class="badge col-green m-r-5">Completed</span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-truncate col-blue" >171-3781991-3548364</td>
+                                                    <td class=" table-img">
+                                                        <img src="assets/images/user/user1.jpg" alt="">
+                                                    </td>
+                                                    <td class="text-truncate">
+                                                        <span class="label bg-cyan shadow-style m-r-5">Delivered</span>
+                                                    </td>
+                                                    <td class="text-truncate">
+                                                        AED 228.96
+                                                    </td>
+                                                    <td class="text-truncate">
+                                                        <span class="badge col-green m-r-5">0</span>AED 57.30
+                                                    </td>
+                                                    <td class="text-truncate">
+                                                        2 days ago
+                                                    </td>
+                                                    <td class="text-truncate">
+                                                        <span class="label bg-teal shadow-style m-r-5">Ebay</span>
+                                                        <span class="label bg-orange shadow-style m-r-5">AliEx</span>
+                                                    </td>
+                                                    <td class="text-truncate">
+                                                        <span class="badge col-green m-r-5">Completed</span>
+                                                    </td>
+                                                </tr>
+        
+                                                
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- end orders <table></table> -->
+
+            </div>
+
+            <!-- //5 widget area -->
+            <div class="col-md-12 col-lg-2">
+                <div class="row">
+                    <div class="col-md-3 col-lg-12">
+                        <div class="counter-box text-center">
+                            <div class="text font-17 m-b-5">Product Sales</div>
+                            <h3 class="m-b-10">AED758
+                                <i class="material-icons col-green">trending_up</i>
+                            </h3>
+                            <div class="icon">
+                                <div class="chart chart-bar"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-lg-12">
+                        <div class="counter-box text-center">
+                            <div class="text font-17 m-b-5">Estimated Profit</div>
+                            <h3 class="m-b-10">AED195
+                                <i class="material-icons col-green">trending_up</i>
+                            </h3>
+                            <div class="icon">
+                                <div class="chart chart-bar"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-lg-12">
+                        <div class="counter-box text-center">
+                            <div class="text font-17 m-b-5">Order Completed</div>
+                            <h3 class="m-b-20">80%
+                                <i class="material-icons col-red">trending_down</i>
+                            </h3>
+                            <div class="progress">
+                                <div class="progress-bar width-per-80" role="progressbar" aria-valuenow="80"
+                                    aria-valuemin="0" aria-valuemax="100">80%</div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-lg-12">
+                        <div class="counter-box text-center">
+                            <div class="text font-17 m-b-5">Imported To Store</div>
+                            <h3 class="m-b-10">1066
+                                <i class="material-icons col-green">trending_up</i>
+                            </h3>
+                            <div class="icon">
+                                <div class="chart chart-pie"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-lg-12">
+                        <div class="counter-box text-center">
+                            <div class="text font-17 m-b-5">Pending Approval</div>
+                            <h3 class="m-b-10">214
+                                <i class="material-icons col-red">trending_down</i>
+                            </h3>
+                            <div class="icon">
+                                <div class="chart" id="liveChart">Loading..</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- end 5 widget area -->
+
+        </div>
+
+        <!-- category & sales summary -->
+        <div class="row clearfix">
+            
+
+            <!-- Sales Summary area-->
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-7">
+                <div class="card">
+                    <div class="header">
+                        <h2>
+                            <strong>Sales Summary</strong></h2>
+                        
+                    </div>
+                    <div class="body">
+                        <div id="summary" class="media-list position-relative" style="max-height: 400px;" [perfectScrollbar]>
+                            <div class="table-responsive">
+                                <table id="summary-table" class="table table-hover table-xl mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th class="border-top-0"></th>
+                                            <th class="border-top-0">Sales</th>
+                                            <th class="border-top-0">Units</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-truncate">Today</td>
+                                            <td class="text-truncate">
+                                                AED 0.00
+                                            </td>
+                                            <td class="text-truncate">0</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-truncate">7 days</td>
+                                            <td class="text-truncate">
+                                                AED 228.96
+                                            </td>
+                                            <td class="text-truncate">1</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-truncate">15 days</td>
+                                            <td class="text-truncate">
+                                                AED 755.80
+                                            </td>
+                                            <td class="text-truncate">3</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-truncate">30 days</td>
+                                            <td class="text-truncate">
+                                                AED 755.80
+                                            </td>
+                                            <td class="text-truncate">4</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-truncate">90 days</td>
+                                            <td class="text-truncate">
+                                                AED 755.80
+                                            </td>
+                                            <td class="text-truncate">4</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-truncate">90 days</td>
+                                            <td class="text-truncate">
+                                                AED 755.80
+                                            </td>
+                                            <td class="text-truncate">4</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-truncate">90 days</td>
+                                            <td class="text-truncate">
+                                                AED 755.80
+                                            </td>
+                                            <td class="text-truncate">4</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-truncate">90 days</td>
+                                            <td class="text-truncate">
+                                                AED 755.80
+                                            </td>
+                                            <td class="text-truncate">4</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-truncate">90 days</td>
+                                            <td class="text-truncate">
+                                                AED 755.80
+                                            </td>
+                                            <td class="text-truncate">4</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-truncate col-grey">Just updated now</td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- #END# Sales summary area -->
+
+            <!-- Categories Widget-->
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-5">
+                <div class="card">
+                    <div class="header">
+                        <h2>
+                            <strong>Categories</strong></h2>
+                        <ul class="header-dropdown m-r-5">
+                            <a routerLink="/category/main">View All</a>
+                        </ul>
+                    </div>
+                    <div class="body">
+                        <div id="new-orders" class="media-list position-relative" style="max-height: 400px;" [perfectScrollbar]>
+                            <div class="table-responsive">
+                                <table id="new-orders-table" class="table table-hover table-xl mb-0">
+                                    
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-truncate col-blue" >Small Appliance Parts</td>
+                                            <td class="text-truncate">
+                                                <div class="pull-right">
+                                                    <span class="label bg-green shadow-style m-r-5">0.00</span>
+                                                    <span class="label bg-brown shadow-style m-r-5">0</span>
+                                                    <span class="label bg-blue-grey shadow-style">4</span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-truncate col-blue" >Toys & Games</td>
+                                            <td class="text-truncate">
+                                                <div class="pull-right">
+                                                    <span class="label bg-green shadow-style m-r-5">0.00</span>
+                                                    <span class="label bg-brown shadow-style m-r-5">0</span>
+                                                    <span class="label bg-blue-grey shadow-style">4</span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-truncate col-blue" >Industrial & Scientific</td>
+                                            <td class="text-truncate">
+                                                <div class="pull-right">
+                                                    <span class="label bg-green shadow-style m-r-5">0.00</span>
+                                                    <span class="label bg-brown shadow-style m-r-5">0</span>
+                                                    <span class="label bg-blue-grey shadow-style">4</span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-truncate col-blue" >Health & Household</td>
+                                            <td class="text-truncate">
+                                                <div class="pull-right">
+                                                    <span class="label bg-green shadow-style m-r-5">0.00</span>
+                                                    <span class="label bg-brown shadow-style m-r-5">0</span>
+                                                    <span class="label bg-blue-grey shadow-style">4</span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-truncate col-blue" >Video Games</td>
+                                            <td class="text-truncate">
+                                                <div class="pull-right">
+                                                    <span class="label bg-green shadow-style m-r-5">0.00</span>
+                                                    <span class="label bg-brown shadow-style m-r-5">0</span>
+                                                    <span class="label bg-blue-grey shadow-style">4</span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-truncate col-blue" >Kitchen & Dining</td>
+                                            <td class="text-truncate">
+                                                <div class="pull-right">
+                                                    <span class="label bg-green shadow-style m-r-5">0.00</span>
+                                                    <span class="label bg-brown shadow-style m-r-5">0</span>
+                                                    <span class="label bg-blue-grey shadow-style">4</span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-truncate col-blue" >Sports & Fitness</td>
+                                            <td class="text-truncate">
+                                                <div class="pull-right">
+                                                    <span class="label bg-green shadow-style m-r-5">0.00</span>
+                                                    <span class="label bg-brown shadow-style m-r-5">0</span>
+                                                    <span class="label bg-blue-grey shadow-style">4</span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-truncate col-blue" >Car & Vehicle Electronics</td>
+                                            <td class="text-truncate">
+                                                <div class="pull-right">
+                                                    <span class="label bg-green shadow-style m-r-5">0.00</span>
+                                                    <span class="label bg-brown shadow-style m-r-5">0</span>
+                                                    <span class="label bg-blue-grey shadow-style">4</span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td class="text-truncate col-blue" >Patio, Lawn & Garden</td>
+                                            <td class="text-truncate">
+                                                <div class="pull-right">
+                                                    <span class="label bg-green shadow-style m-r-5">0.00</span>
+                                                    <span class="label bg-brown shadow-style m-r-5">0</span>
+                                                    <span class="label bg-blue-grey shadow-style">4</span>
+                                                </div>
+                                                
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-truncate col-blue" >Patio, Lawn & Garden</td>
+                                            <td class="text-truncate">
+                                                <div class="pull-right">
+                                                    <span class="label bg-green shadow-style m-r-5">0.00</span>
+                                                    <span class="label bg-brown shadow-style m-r-5">0</span>
+                                                    <span class="label bg-blue-grey shadow-style">4</span>
+                                                </div>
+                                                
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-truncate col-blue" >Patio, Lawn & Garden</td>
+                                            <td class="text-truncate">
+                                                <div class="pull-right">
+                                                    <span class="label bg-green shadow-style m-r-5">0.00</span>
+                                                    <span class="label bg-brown shadow-style m-r-5">0</span>
+                                                    <span class="label bg-blue-grey shadow-style">4</span>
+                                                </div>
+                                                
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-truncate col-blue" >Patio, Lawn & Garden</td>
+                                            <td class="text-truncate">
+                                                <div class="pull-right">
+                                                    <span class="label bg-green shadow-style m-r-5">0.00</span>
+                                                    <span class="label bg-brown shadow-style m-r-5">0</span>
+                                                    <span class="label bg-blue-grey shadow-style">4</span>
+                                                </div>
+                                                
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-truncate col-blue" >Patio, Lawn & Garden</td>
+                                            <td class="text-truncate">
+                                                <div class="pull-right">
+                                                    <span class="label bg-green shadow-style m-r-5">0.00</span>
+                                                    <span class="label bg-brown shadow-style m-r-5">0</span>
+                                                    <span class="label bg-blue-grey shadow-style">4</span>
+                                                </div>
+                                                
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- #END# Categories Widget -->
+
+            
+        </div>
+        <!-- end category & sales summary -->
+
+        <!-- Best Sellings -->
+        <div class="row clearfix">
+
+            <!-- Best Sellings Widget-->
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="card">
+                    <div class="header">
+                        <h2>
+                            <strong>Best Selling Products</strong></h2>
+                        <ul class="header-dropdown m-r-5">
+                            <a routerLink="/store/best-product">View All</a>
+                        </ul>
+                    </div>
+                    <div class="body">
+                        <div class="media-list position-relative" style="max-height: 400px;" [perfectScrollbar]>
+                            <div class="table-responsive">
+                                <table class="table table-hover table-xl mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th class="border-top-0"></th>
+                                            <th class="border-top-0">Product Name</th>
+                                            <th class="border-top-0">Asin</th>
+                                            <th class="border-top-0">Category</th>
+                                            <th class="border-top-0">Quantity</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="table-img">
+                                                <img src="assets/images/user/user1.jpg" alt="">
+                                            </td>
+                                            <td class="text-truncate col-blue">
+                                                24 Pack (8*12*20*28) Hook and Loop Reusable
+                                            </td>
+                                            <td class="text-truncate">
+                                                B082Y3Q2V
+                                            </td>
+                                            <td class="text-truncate">
+                                                Electronics
+                                            </td>
+                                            <td class="text-truncate">
+                                                <span class="label bg-blue shadow-style m-r-5 font-18">6</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="table-img">
+                                                <img src="assets/images/user/user1.jpg" alt="">
+                                            </td>
+                                            <td class="text-truncate col-blue">
+                                                24 Pack (8*12*20*28) Hook and Loop Reusable
+                                            </td>
+                                            <td class="text-truncate">
+                                                B082Y3Q2V
+                                            </td>
+                                            <td class="text-truncate">
+                                                Electronics
+                                            </td>
+                                            <td class="text-truncate">
+                                                <span class="label bg-blue shadow-style m-r-5 font-18">6</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="table-img">
+                                                <img src="assets/images/user/user1.jpg" alt="">
+                                            </td>
+                                            <td class="text-truncate col-blue">
+                                                24 Pack (8*12*20*28) Hook and Loop Reusable
+                                            </td>
+                                            <td class="text-truncate">
+                                                B082Y3Q2V
+                                            </td>
+                                            <td class="text-truncate">
+                                                Electronics
+                                            </td>
+                                            <td class="text-truncate">
+                                                <span class="label bg-blue shadow-style m-r-5 font-18">6</span>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="table-img">
+                                                <img src="assets/images/user/user1.jpg" alt="">
+                                            </td>
+                                            <td class="text-truncate col-blue">
+                                                24 Pack (8*12*20*28) Hook and Loop Reusable
+                                            </td>
+                                            <td class="text-truncate">
+                                                B082Y3Q2V
+                                            </td>
+                                            <td class="text-truncate">
+                                                Electronics
+                                            </td>
+                                            <td class="text-truncate">
+                                                <span class="label bg-blue shadow-style m-r-5 font-18">6</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="table-img">
+                                                <img src="assets/images/user/user1.jpg" alt="">
+                                            </td>
+                                            <td class="text-truncate col-blue">
+                                                24 Pack (8*12*20*28) Hook and Loop Reusable
+                                            </td>
+                                            <td class="text-truncate">
+                                                B082Y3Q2V
+                                            </td>
+                                            <td class="text-truncate">
+                                                Electronics
+                                            </td>
+                                            <td class="text-truncate">
+                                                <span class="label bg-blue shadow-style m-r-5 font-18">6</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="table-img">
+                                                <img src="assets/images/user/user1.jpg" alt="">
+                                            </td>
+                                            <td class="text-truncate col-blue">
+                                                24 Pack (8*12*20*28) Hook and Loop Reusable
+                                            </td>
+                                            <td class="text-truncate">
+                                                B082Y3Q2V
+                                            </td>
+                                            <td class="text-truncate">
+                                                Electronics
+                                            </td>
+                                            <td class="text-truncate">
+                                                <span class="label bg-blue shadow-style m-r-5 font-18">6</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="table-img">
+                                                <img src="assets/images/user/user1.jpg" alt="">
+                                            </td>
+                                            <td class="text-truncate col-blue">
+                                                24 Pack (8*12*20*28) Hook and Loop Reusable
+                                            </td>
+                                            <td class="text-truncate">
+                                                B082Y3Q2V
+                                            </td>
+                                            <td class="text-truncate">
+                                                Electronics
+                                            </td>
+                                            <td class="text-truncate">
+                                                <span class="label bg-blue shadow-style m-r-5 font-18">6</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="table-img">
+                                                <img src="assets/images/user/user1.jpg" alt="">
+                                            </td>
+                                            <td class="text-truncate col-blue">
+                                                24 Pack (8*12*20*28) Hook and Loop Reusable
+                                            </td>
+                                            <td class="text-truncate">
+                                                B082Y3Q2V
+                                            </td>
+                                            <td class="text-truncate">
+                                                Electronics
+                                            </td>
+                                            <td class="text-truncate">
+                                                <span class="label bg-blue shadow-style m-r-5 font-18">6</span>
+                                            </td>
+                                        </tr>
+                                        
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- #END# Best Sellings Widget -->
+        </div>
+        <!-- end Orders & Best Sellings -->
+
+    </div>
+</section>

@@ -1,0 +1,113 @@
+<section class="content">
+  <div class="container-fluid">
+
+      <!-- breadcrumb -->
+      <div class="block-header">
+          <div class="row">
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                  <ul class="breadcrumb breadcrumb-style ">
+                    <li class="breadcrumb-item">
+                      <h4 class="page-title">Orders</h4>
+                    </li>
+                    <li class="breadcrumb-item bcrumb-1">
+                      <a routerLink="/dashboard/main">
+                        <i class="fas fa-home"></i> Home</a>
+                    </li>
+                    <li class="breadcrumb-item active">Order</li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+      <!-- end breadcrumb -->
+
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="card">
+            <div class="header">
+              <div class="row">
+                <div class="col-12 col-lg-8">
+                  <h2><strong>Orders</strong></h2>
+                </div>
+                <div class="col-12 col-lg-2">
+                  <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>All Time</mat-label>
+                    <mat-select>
+                      <mat-option value="option0">All Time</mat-option>
+                      <mat-option value="option1">Last 7 days</mat-option>
+                      <mat-option value="option2">Last 14 days</mat-option>
+                      <mat-option value="option4">Last 30 days</mat-option>
+                      <mat-option value="option5">Last 180 days</mat-option>
+                      <mat-option value="option6">Last 365 days</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+                <div class="col-12 col-lg-2">
+                  <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Country</mat-label>
+                    <mat-select>
+                      <mat-option value="option1">U A E</mat-option>
+                      <mat-option value="option2">U S A</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+              </div>
+              
+            </div>
+            <div class="body">
+              <ul class="nav nav-tabs">
+                <li class="nav-item m-l-10">
+                    <a class="nav-link active" data-toggle="tab" href="#all">All</a>
+                </li>
+                <li class="nav-item m-l-10">
+                  <a class="nav-link" data-toggle="tab" href="#sold">Sold</a>
+                </li>
+                <li class="nav-item m-l-10">
+                  <a class="nav-link" data-toggle="tab" href="#placed">Placed</a>
+                </li>
+                <li class="nav-item m-l-10">
+                    <a class="nav-link" data-toggle="tab" href="#confirmed">Confirmed</a>
+                </li>
+                <li class="nav-item m-l-10">
+                  <a class="nav-link" data-toggle="tab" href="#confirmed">Confirmed</a>
+                </li>
+                <li class="nav-item m-l-10">
+                  <a class="nav-link" data-toggle="tab" href="#pre_confirmed">PreConfirmed</a>
+                </li>
+                <li class="nav-item m-l-10">
+                  <a class="nav-link" data-toggle="tab" href="#delivered">Delivered</a>
+                </li>
+                <li class="nav-item m-l-10">
+                  <a class="nav-link" data-toggle="tab" href="#oprtions">More Options</a>
+                </li>
+              </ul>
+              <div class="tab-content">
+                  <div class="tab-pane body active" id="all">
+                    <p>Your Amazon store is checked at regular intervals, and orders in Unshipped are transferred here with the sold label. When you complete the order using our Chrome extension,  you don't need to take any extra action most of the time with our fully automated system</p>
+                    <app-order-table></app-order-table>
+                  </div>
+                  <div class="tab-pane body" id="sold">
+                    <app-order-table></app-order-table>
+                  </div>
+                  <div class="tab-pane body" id="placed">
+                    <app-order-table></app-order-table>
+                  </div>
+                  <div class="tab-pane body" id="confirmed">
+                    <app-order-table></app-order-table>
+                  </div>
+                  <div class="tab-pane body" id="pre_confirmed">
+                    <app-order-table></app-order-table>
+                  </div>
+                  <div class="tab-pane body" id="delivered">
+                    <app-order-table></app-order-table>
+                  </div><div class="tab-pane body" id="options">
+                    <app-order-table></app-order-table>
+                  </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      
+  </div>
+</section>

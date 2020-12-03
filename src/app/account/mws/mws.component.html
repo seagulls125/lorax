@@ -1,0 +1,107 @@
+<section class="content">
+  <div class="container-fluid">
+    <div class="block-header">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <ul class="breadcrumb breadcrumb-style ">
+            <li class="breadcrumb-item">
+              <h4 class="page-title">Blank</h4>
+            </li>
+            <li class="breadcrumb-item bcrumb-1">
+              <a routerLink="/dashboard/main">
+                <i class="fas fa-home"></i> Home</a>
+            </li>
+            <li class="breadcrumb-item bcrumb-2">
+              <a href="#" onClick="return false;">Account</a>
+            </li>
+            <li class="breadcrumb-item active">Amazon MWS</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="row clearfix">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="card">
+          <div class="header">
+            <h2><strong>MWS</strong></h2>
+          </div>
+          <div class="body">
+
+            <mat-horizontal-stepper [linear]="isLinear" #stepper>
+              <mat-step [stepControl]="firstFormGroup">
+                  <form [formGroup]="firstFormGroup">
+                    <ng-template matStepLabel>Make sure the name, ID are as follows, then clicke Next</ng-template>
+                    <mat-form-field class="example-full-width" appearance="outline">
+                        <mat-label>Develoepr Name</mat-label>
+                        <input matInput formControlName="firstName" required>
+                        <mat-icon matSuffix>face</mat-icon>
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width" appearance="outline">
+                        <mat-label>Developer ID</mat-label>
+                        <input matInput formControlName="lastName" required>
+                        <mat-icon matSuffix>face</mat-icon>
+                    </mat-form-field>
+                    <div>
+                        <button mat-raised-button matStepperNext color="primary">Next</button>
+                    </div>
+                  </form>
+              </mat-step>
+              <mat-step [stepControl]="secondFormGroup">
+                  <form [formGroup]="secondFormGroup">
+                    <ng-template matStepLabel>Select the checkbox and hit Next again</ng-template>
+                    <br>
+                    <div>
+                      <h5>
+                        If you give third parties access to your account, you are responsible for all actions taken by the third parties in connection with your account.
+                        Also, do not provide your Amazon user name and password information to anyone who contracts you by email or phone and asks for this information, even if they clain to be from Amazon. No one from Amazon will ever ask you to verify your user name and password outside of your own logging in to your Amazon selling account.
+                      </h5>
+                      <br>
+                      <mat-checkbox class="example-margin" formControlName="checked">
+                        I understand that I take complete responsibility for the acts and omissions of SellerRunning regarding my Amazon selling account and hereby direct Amazon to allow SellerRunning to access my Amazon selling account.                          
+                      </mat-checkbox>
+                    </div>
+                    
+                    <br>
+                    <div>
+                        <button mat-stroked-button matStepperPrevious color="warn"
+                            class="mr-2">Back</button>
+                        <button mat-raised-button matStepperNext color="primary">Next</button>
+                    </div>
+                  </form>
+              </mat-step>
+              <mat-step>
+                <form [formGroup]="thirdFormGroup">
+                  <ng-template matStepLabel>Make sure the name, ID are as follows, then clicke Next</ng-template>
+                  <h4>Congratulations</h4>
+                  <p>
+                    These are your account identifiers which SellerRunning will need to access your Amazon seller account. These are the only indentifers that need to provide. You should not share additional information such as your username or password. You will need to register with SellerRunning and provide these identifiers before they can make Amazon MWS API calls on your behalf.
+                  </p>
+                  <div>
+
+                  </div>
+                  <mat-form-field class="example-full-width" appearance="outline">
+                      <mat-label>Seller ID</mat-label>
+                      <input matInput formControlName="seller_id" required>
+                      <mat-icon matSuffix>face</mat-icon>
+                  </mat-form-field>
+                  <mat-form-field class="example-full-width" appearance="outline">
+                      <mat-label>MWS Auth Token</mat-label>
+                      <input matInput formControlName="mws_auth_token" required>
+                      <mat-icon matSuffix>face</mat-icon>
+                  </mat-form-field>
+                </form>
+                <div>
+                    <button mat-stroked-button matStepperPrevious color="warn" class="mr-2">Back</button>
+                    <button mat-raised-button color="primary" (click)="stepper.reset()" class="mr-2">Reset</button>
+                    <button mat-raised-button color="primary" (click)="save()">Save</button>
+                </div>
+              </mat-step>
+            </mat-horizontal-stepper>
+            
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

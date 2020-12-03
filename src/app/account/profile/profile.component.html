@@ -1,0 +1,237 @@
+<section class="content">
+  <div class="container-fluid">
+    <div class="block-header">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <ul class="breadcrumb breadcrumb-style ">
+            <li class="breadcrumb-item">
+              <h4 class="page-title">Blank</h4>
+            </li>
+            <li class="breadcrumb-item bcrumb-1">
+              <a routerLink="/dashboard/main">
+                <i class="fas fa-home"></i> Home</a>
+            </li>
+            <li class="breadcrumb-item bcrumb-2">
+              <a href="#" onClick="return false;">Account</a>
+            </li>
+            <li class="breadcrumb-item active">My Account & Store Info</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="row clearfix">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+        <div class="card">
+          <div class="header">
+            <h2><strong>Profile Information</strong></h2>
+          </div>
+          <div class="body">
+            <form class="register-form m-4" [formGroup]="register" (ngSubmit)="onRegister()">
+              <div class="row">
+                  <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+                      <mat-form-field class="example-full-width" appearance="outline">
+                          <mat-label>First name</mat-label>
+                          <input matInput formControlName="first" required>
+                          <mat-icon matSuffix>face</mat-icon>
+                          <mat-error *ngIf="register.get('first').hasError('required')">
+                              First name is required
+                          </mat-error>
+                      </mat-form-field>
+                  </div>
+                  <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+                      <mat-form-field class="example-full-width" appearance="outline">
+                          <mat-label>Last name</mat-label>
+                          <input matInput formControlName="last">
+                          <mat-icon matSuffix>face</mat-icon>
+                      </mat-form-field>
+                  </div>
+              </div>
+              
+              <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-2">
+                  <mat-form-field class="example-full-width" appearance="outline">
+                      <mat-label>Email</mat-label>
+                      <input matInput formControlName="email" required>
+                      <mat-icon matSuffix>email</mat-icon>
+                      <mat-error
+                          *ngIf="register.get('email').hasError('required') || register.get('email').touched">
+                          Please enter a valid email address
+                      </mat-error>
+                  </mat-form-field>
+                </div>
+              </div>
+              <hr>
+
+              <div class="row">
+                <div class="col-12 col-lg-6">
+                  <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Current Password</mat-label>
+                    <input matInput formControlName="password" [type]="hide ? 'password' : 'text'"
+                        required>
+                    <mat-icon matSuffix (click)="hide = !hide">
+                        {{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    <mat-error *ngIf="register.get('password').hasError('required')">
+                        Current Password is required
+                    </mat-error>
+                  </mat-form-field>
+                  <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>New Password</mat-label>
+                    <input matInput formControlName="new_password" [type]="hide ? 'password' : 'text'"
+                        required>
+                    <mat-icon matSuffix (click)="hide = !hide">
+                        {{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    <mat-error *ngIf="register.get('new_password').hasError('required')">
+                        New Password is required
+                    </mat-error>
+                  </mat-form-field>
+                  <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Confirm Password</mat-label>
+                    <input matInput formControlName="confirm_password" [type]="hide ? 'password' : 'text'"
+                        required>
+                    <mat-icon matSuffix (click)="hide = !hide">
+                        {{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    <mat-error *ngIf="register.get('confirm_password').hasError('required')">
+                        Confirm Password is required
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+                <div class="col-12 col-lg-6">
+                  <div class="card" style="background-color: rgba(0,0,0,0.08);">
+                    <div class="body" >
+                      <h5>Secure password tips:</h5>
+                      <ul class="password-tips">
+                        <li>
+                          Use at least 8 characters, a combination of numbers and letters is best.
+                        </li>
+                        <li>
+                          Do not use the same password you have used with us previously
+                        </li>
+                        <li>
+                          Do not use dictionary words, your name, e-mail address, mobile phone number or other personal information that can be easily obtained.
+                        </li>
+                        <li>
+                          Do not use the same password for multiple online accounts.
+                        </li>
+                      </ul>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-2 text-center">
+                  <button class="mr-3" mat-raised-button
+                      color="primary">Save Changes</button>
+                  <button type="button" mat-button>Cancel</button>
+                </div>
+              </div>
+            </form>
+            
+
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+        <div class="card">
+          <div class="header">
+            <h2><strong>Store Information</strong></h2>
+          </div>
+          <div class="body">
+
+            <form class="register-form m-4" [formGroup]="preference" (ngSubmit)="onRegister()">
+              <div class="row">
+                <div class="col-12 col-lg-3">
+                  <p style="margin-top: 1.5rem;">Amazon Store Name</p>
+                </div>
+                <div class="col-12 col-lg-9 mb-2">
+                  <mat-form-field class="example-full-width" appearance="outline">
+                      <mat-label>Amazon Store Name</mat-label>
+                      <input matInput formControlName="store_name" required>
+                      <mat-icon matSuffix>face</mat-icon>
+                      <mat-error *ngIf="preference.get('store_name').hasError('required')">
+                          Store name is required
+                      </mat-error>
+                  </mat-form-field>
+                  <p><a routerLink="/">Click here</a> to see your Amazon store information</p>
+                </div>
+              </div>
+              <hr><br>
+              <div class="row">
+                <div class="col-12 col-lg-3">
+                  <p style="margin-top: 1.5rem;">Maximum Stock</p>
+                </div>
+                <div class="col-12 col-lg-9 mb-2">
+                    <mat-form-field class="example-full-width" appearance="outline">
+                        <mat-label>Maximum Stock</mat-label>
+                        <input matInput formControlName="maximam_stock" required>
+                        <mat-icon matSuffix>location_city</mat-icon>
+                        <mat-error *ngIf="preference.get('maximam_stock').hasError('required')">
+                            Maximum Stock is required
+                        </mat-error>
+                    </mat-form-field>
+                    <p>Enter the maximum number of stocks that products in your inventory can have.</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12 col-lg-3">
+                  <p style="margin-top: 1.5rem;">Currency update</p>
+                </div>
+                <div class="col-12 col-lg-4 mb-2">
+                  <mat-form-field class="example-full-width" appearance="outline">
+                      <mat-label>Currency Update</mat-label>
+                      <mat-select formControlName="currency" required>
+                          <mat-option [value]="'India'">
+                              India
+                          </mat-option>
+                          <mat-option [value]="'Algeria'">
+                              Algeria
+                          </mat-option>
+                          <mat-option [value]="'Brazil'">
+                              Brazil
+                          </mat-option>
+                          <mat-option [value]="'Poland'">
+                              Poland
+                          </mat-option>
+                          <mat-option [value]="'Sri Lanka'">
+                              Sri Lanka
+                          </mat-option>
+                          <mat-option [value]="'Thailand'">
+                              Thailand
+                          </mat-option>
+                          <mat-option [value]="'Japan'">
+                              Japan
+                          </mat-option>
+                      </mat-select>
+                      <mat-icon matSuffix>flag</mat-icon>
+                      <mat-error *ngIf="preference.get('currency').hasError('required')">
+                          Currency Update is required
+                      </mat-error>
+                  </mat-form-field>
+                </div>
+                <div class="col-12 col-lg-5 mb-2">
+                  <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Rate</mat-label>    
+                    <input matInput formControlName="rate">
+                    <mat-icon matSuffix>business</mat-icon>
+                    <mat-error *ngIf="preference.get('rate').hasError('required')">
+                      Rate is required
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-2 text-center">
+                  <button class="mr-3" mat-raised-button
+                      color="primary">Submit</button>
+                  <button type="button" mat-button>Cancel</button>
+                </div>
+              </div>
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

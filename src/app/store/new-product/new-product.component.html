@@ -1,0 +1,127 @@
+<section class="content">
+  <div class="container-fluid">
+    <div class="block-header">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <ul class="breadcrumb breadcrumb-style ">
+            <li class="breadcrumb-item">
+              <h4 class="page-title">Blank</h4>
+            </li>
+            <li class="breadcrumb-item bcrumb-1">
+              <a routerLink="/dashboard/main">
+                <i class="fas fa-home"></i> Home</a>
+            </li>
+            <li class="breadcrumb-item bcrumb-2">
+              <a href="#" onClick="return false;">Inventory</a>
+            </li>
+            <li class="breadcrumb-item active">Add New Product</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="row clearfix">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="card">
+            <div class="header">
+                <div class="row">
+                    <div class="col-12 col-lg-9">
+                        <p>INVENTORY</p>
+                        <h1><strong>Add New Product</strong></h1>
+                    </div>
+                    <div class="col-12 col-lg-3">
+                        <mat-form-field class="example-full-width" appearance="outline">
+                            <mat-label>Country</mat-label>
+                            <mat-select>
+                                <mat-option value="option1">U A E</mat-option>
+                                <mat-option value="option2">U S A</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+
+                </div>
+
+                
+            </div>
+            <div class="body">
+
+                <form class="register-form m-4" [formGroup]="register" (ngSubmit)="onRegister()">
+                    <div class="row">
+                        <div class="col-12">
+                            <h3>Add Product In Bulk</h3>
+                            <mat-list role="list">
+                                <mat-list-item role="listitem">
+                                    <span><i class="fas fa-check mr-2"></i>
+                                        You can add ASINs or product URLs of the products you want to add to your store in our system.
+                                    </span>
+                                </mat-list-item>
+                                <mat-list-item role="listitem">
+                                    <span><i class="fas fa-check mr-2"></i>
+                                        After you submitted the ASIN/URL list, your products will start uploading to your store within 60 minutes.
+                                    </span>
+                                </mat-list-item>
+                            </mat-list>
+                        </div>
+                        
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-2">
+                            <h5><b>Make a selection</b></h5>
+                            <mat-form-field class="example-full-width" appearance="outline">
+                                <mat-label>Make a selection</mat-label>
+                                <mat-select formControlName="country" required>
+                                    <mat-option [value]="'asin'">
+                                        ASIN
+                                    </mat-option>
+                                    <mat-option [value]="'sku'">
+                                        SKU
+                                    </mat-option>
+                                </mat-select>
+                                <mat-icon matSuffix>flag</mat-icon>
+                            </mat-form-field>
+                            <p>Will you add by ASIN or product URL?</p>
+                        </div>
+                    </div>
+                    <hr><br>
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-2">
+                            <h5><b>ASIN or product URL</b></h5>
+                            <mat-form-field class="example-full-width" appearance="outline">
+                                <textarea matInput formControlName="address"></textarea>
+                            </mat-form-field>
+                            <p>You can enter up to 5000 ASINs or product URLs at a time.</p>
+                        </div>
+                    </div>
+                    <hr><br>
+                    <div class="row">
+                        <div class="col-12 col-lg-2">
+                            <h5 style="margin-top: 2rem;"><b>SKU Prefix</b></h5>
+                        </div>
+                        <div class="col-12 col-lg-10 mb-2">
+                            <mat-form-field class="example-full-width" appearance="outline">
+                                <mat-label>SKU Prefix</mat-label>
+                                <input matInput formControlName="first" required>
+                                <mat-icon matSuffix>face</mat-icon>
+                                <mat-error *ngIf="register.get('first').hasError('required')">
+                                    SKU Prefix is required
+                                </mat-error>
+                            </mat-form-field>
+                            <p>Set a prefix for your SKUs</p>
+                            <p>SKU would look like this: AMZR-XXXX-123456</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-2 text-center">
+                            <button class="mr-3" mat-raised-button
+                                color="primary">Add New Product</button>
+                            <button type="button" mat-button>Cancel</button>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

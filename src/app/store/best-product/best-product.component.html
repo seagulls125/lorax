@@ -1,0 +1,74 @@
+<section class="content">
+  <div class="container-fluid">
+
+      <!-- breadcrumb -->
+      <div class="block-header">
+          <div class="row">
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                  <ul class="breadcrumb breadcrumb-style ">
+                    <li class="breadcrumb-item">
+                      <h4 class="page-title">Store Inventory</h4>
+                    </li>
+                    <li class="breadcrumb-item bcrumb-1">
+                      <a routerLink="/dashboard/main">
+                        <i class="fas fa-home"></i> Home</a>
+                    </li>
+                    <li class="breadcrumb-item active">Best Selling Products</li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+      <!-- end breadcrumb -->
+
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="card">
+            <div class="header">
+              <div class="row">
+                <div class="col-12 col-lg-6">
+                  <h2><strong>Best Selling Product</strong><span class="label bg-blue-grey ml-2">54</span></h2>
+                </div>
+                <div class="col-12 col-lg-2 text-right">
+                  <button mat-raised-button color="primary" class="mr-2 mt-2">
+                    <i class="material-icons">file_download</i>
+                    Download list
+                  </button>
+                </div>
+                <div class="col-12 col-lg-2">
+                  <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>All Time</mat-label>
+                    <mat-select>
+                      <mat-option value="option0">All Time</mat-option>
+                      <mat-option value="option1">Last 7 days</mat-option>
+                      <mat-option value="option2">Last 14 days</mat-option>
+                      <mat-option value="option4">Last 30 days</mat-option>
+                      <mat-option value="option5">Last 180 days</mat-option>
+                      <mat-option value="option6">Last 365 days</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+                <div class="col-12 col-lg-2">
+                  <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Country</mat-label>
+                    <mat-select>
+                      <mat-option value="option1">U A E</mat-option>
+                      <mat-option value="option2">U S A</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+              </div>
+              
+            </div>
+            <div class="body">
+              <app-store-table [isBestProduct]="true"></app-store-table>
+            </div>
+            
+          </div>
+          
+        </div>
+        
+      </div>
+
+      
+  </div>
+</section>

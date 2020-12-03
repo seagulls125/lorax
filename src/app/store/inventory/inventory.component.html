@@ -1,0 +1,97 @@
+<section class="content">
+  <div class="container-fluid">
+
+      <!-- breadcrumb -->
+      <div class="block-header">
+          <div class="row">
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-10">
+                  <ul class="breadcrumb breadcrumb-style ">
+                    <li class="breadcrumb-item">
+                      <h4 class="page-title">Store Inventory</h4>
+                    </li>
+                    <li class="breadcrumb-item bcrumb-1">
+                      <a routerLink="/dashboard/main">
+                        <i class="fas fa-home"></i> Home</a>
+                    </li>
+                    <li class="breadcrumb-item active">{{active_breadcrumb}}</li>
+                  </ul>
+              </div>
+              <div class="col-12 col-lg-2">
+                <!-- <mat-form-field class="example-full-width" appearance="outline">
+                  <mat-label>Country</mat-label>
+                  <mat-select>
+                    <mat-option value="option1">U A E</mat-option>
+                    <mat-option value="option2">U S D</mat-option>
+                  </mat-select>
+                </mat-form-field> -->
+              </div>
+          </div>
+      </div>
+      <!-- end breadcrumb -->
+
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="card">
+            <div class="header">
+              <div class="row">
+                <div class="col-12 col-lg-9">
+                  <h2><strong>{{subtitle}}</strong><span class="label bg-blue-grey ml-2">54</span></h2>
+                </div>
+                <div class="col-12 col-lg-3">
+                  <a routerLink="/store/bulk-delete" class="mr-4">
+                    <button mat-raised-button>
+                      <i class="material-icons">delete</i>
+                      Bulk Product Delete
+                    </button>
+                  </a>
+                  <a routerLink="/store/new-product">
+                    <button mat-raised-button color="primary">
+                      <i class="material-icons">add</i>
+                      Add New Product
+                    </button>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="body">
+              <ul class="nav nav-tabs">
+                <li class="nav-item m-l-10">
+                  <a class="nav-link active" data-toggle="tab" href="#imported_store" (click)="setImported()">Imported to Store
+                  </a>
+                </li>
+                <li class="nav-item m-l-10">
+                  <a class="nav-link" data-toggle="tab" href="#no_criteria" (click)="setCriteria()">Doesn't meet Crrteria</a>
+                </li>
+                <li class="nav-item m-l-10">
+                  <a class="nav-link" data-toggle="tab" href="#in_queue" (click)="setQueue()">In Queue</a>
+                </li>
+                <li class="nav-item m-l-10">
+                    <a class="nav-link" data-toggle="tab" href="#pending_approval" (click)="setApproval()">Pending Approval</a>
+                </li>
+              </ul>
+              <div class="tab-content">
+                  <div class="tab-pane body active" id="imported_store">
+                    <p>All of your prouducts that meet the creteria and are successfully transferred to Amazon store are listed here</p>
+                    <app-store-table [isAdvancedShow]="true" [isPending]="false" [isBestProduct]="false"></app-store-table>
+                  </div>
+                  <div class="tab-pane body" id="no_criteria">
+                    <app-store-table [isAdvancedShow]="false" [isPending]="false" [isBestProduct]="false"></app-store-table>
+                  </div>
+                  <div class="tab-pane body" id="in_queue">
+                    <app-store-table [isAdvancedShow]="false" [isPending]="false" [isBestProduct]="false"></app-store-table>
+                  </div>
+                  <div class="tab-pane body" id="pending_approval">
+                    <p>
+                      Products that are ready to be added to your store and waiting to your approval are listed here. The products you approve will be removed from this list and will be automatically added to your store within 15~20 minutes. Product price and quantity information will be determined when the product is transferred to your store.
+                    </p>
+                    <app-store-table [isAdvancedShow]="true" [isPending]="true"></app-store-table>
+                  </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      
+  </div>
+</section>

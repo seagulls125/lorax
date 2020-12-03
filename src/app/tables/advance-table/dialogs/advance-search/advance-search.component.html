@@ -1,0 +1,112 @@
+<div class="addContainer">
+  <div class="modalHeader">
+    <div class="editRowModal">
+      <div class="modalHeader clearfix">
+        <div class="modal-about">
+          <div class="font-weight-bold p-t-5 p-l-10 font-25">
+            Advanced Search</div>
+        </div>
+      </div>
+    </div>
+    <button mat-icon-button (click)="dialogRef.close()" aria-label="Close dialog">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+  <br/>
+  <div>
+    <div class="row">
+      <div class="col-sm-12 col-lg-6">
+        <mat-slide-toggle class="m-b-10">Product Sold Me!</mat-slide-toggle><br/>
+        <mat-slide-toggle class="m-b-10">Product Sold Me!</mat-slide-toggle><br/>
+        <mat-slide-toggle class="m-b-10">Product Sold Me!</mat-slide-toggle><br/>
+        <mat-slide-toggle class="m-b-10">Product Sold Me!</mat-slide-toggle><br/>
+        <mat-slide-toggle class="m-b-10">Product Sold Me!</mat-slide-toggle><br/>
+        <mat-slide-toggle class="m-b-10">Product Sold Me!</mat-slide-toggle><br/>
+        <mat-slide-toggle class="m-b-10">Product Sold Me!</mat-slide-toggle><br/>
+        <mat-slide-toggle class="m-b-10">Product Sold Me!</mat-slide-toggle><br/>
+        <mat-slide-toggle class="m-b-10">Product Sold Me!</mat-slide-toggle><br/>
+        <mat-slide-toggle class="m-b-10">Product Sold Me!</mat-slide-toggle><br/>
+        <mat-slide-toggle class="m-b-10">Product Sold Me!</mat-slide-toggle><br/>
+        <mat-slide-toggle class="m-b-10">Product Sold Me!</mat-slide-toggle><br/>
+        <mat-slide-toggle class="m-b-10">Product Sold Me!</mat-slide-toggle><br/>
+        <mat-slide-toggle class="m-b-10">Product Sold Me!</mat-slide-toggle><br/>
+        <mat-slide-toggle class="m-b-10">Product Sold Me!</mat-slide-toggle><br/>
+        <mat-slide-toggle class="m-b-10">Product Sold Me!</mat-slide-toggle><br/>
+        <mat-slide-toggle class="m-b-10">Product Sold Me!</mat-slide-toggle><br/>
+        <mat-slide-toggle class="m-b-10">Product Sold Me!</mat-slide-toggle><br/>
+      </div>
+
+      <div class="col-sm-12 col-lg-6">
+        <form [formGroup]="searchForm">
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Category</mat-label>
+            <mat-select formControlName="category" required>
+                <mat-option [value]="'India'">
+                    India
+                </mat-option>
+                <mat-option [value]="'Algeria'">
+                    Algeria
+                </mat-option>
+                <mat-option [value]="'Brazil'">
+                    Brazil
+                </mat-option>
+                <mat-option [value]="'Poland'">
+                    Poland
+                </mat-option>
+                <mat-option [value]="'Sri Lanka'">
+                    Sri Lanka
+                </mat-option>
+                <mat-option [value]="'Thailand'">
+                    Thailand
+                </mat-option>
+                <mat-option [value]="'Japan'">
+                    Japan
+                </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Subcategory</mat-label>
+            <input matInput formControlName="subcategory" required>
+          </mat-form-field>
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Brand</mat-label>
+            <input matInput formControlName="brand" required>
+          </mat-form-field>
+          <div class="row">
+            <div class="col-md-12 col-lg-6">
+              <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Min Price</mat-label>
+                <input matInput formControlName="min_price" required>
+              </mat-form-field>
+            </div>
+            <div class="col-md-12 col-lg-6">
+              <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Max Price</mat-label>
+                <input matInput formControlName="max_price" required>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 col-lg-6">
+              <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Amazon Min Price</mat-label>
+                <input matInput formControlName="amazon_min_price" required>
+              </mat-form-field>
+            </div>
+            <div class="col-md-12 col-lg-6">
+              <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Amazon Max Price</mat-label>
+                <input matInput formControlName="amazon_max_price" required>
+              </mat-form-field>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="pull-right">
+      <button mat-button (click)="onNoClick()">Cancel</button>
+      <button mat-flat-button [mat-dialog-close]="" color="primary">Search</button>
+    </div>
+    
+  </div>
+</div>

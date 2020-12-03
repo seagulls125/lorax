@@ -1,0 +1,174 @@
+<div class="addContainer">
+  <div class="modalHeader">
+    <div class="editRowModal">
+      <div class="modalHeader clearfix">
+        <img [src]='keywordBlack.img' alt="avatar">
+        <div class="modal-about">
+          <div class="font-weight-bold p-t-5 p-l-10 font-17">
+            {{dialogTitle}}</div>
+        </div>
+      </div>
+    </div>
+    <button mat-icon-button (click)="dialogRef.close()" aria-label="Close dialog">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+  <div mat-dialog-content class="position-relative" style="max-height: 600px;" [perfectScrollbar]>
+    <form class="register-form m-4" [formGroup]="keywordBlackForm" (ngSubmit)="submit">
+      <div class="row">
+        <div class="col-12">
+          <h4><b>You can enter up to 5000 keywords at a time</b></h4>
+          <mat-form-field class="example-full-width" appearance="outline">
+            <textarea matInput></textarea>
+          </mat-form-field>
+          <small><b>You can enter up to 5000 keywords at a time</b></small>
+        </div>
+
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-12">
+          <h4><b>Choose in which market place you want to block</b></h4>
+          <button class="mr-3 btn btn-outline-primary btn-lg">All</button>
+          <button class="mr-3 btn btn-outline-primary btn-lg"><i class="fas fa-bullseye"></i>&nbsp;U A E</button>
+          <button class="btn btn-outline-primary btn-lg"><i class="fas fa-bullseye"></i>&nbsp;Singapore</button>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-12">
+          <div class="card bg-yellow">
+            <div class="body">
+              
+              <i class="material-icons mt-2 pull-left mr-2">error_outline</i>
+              <p class="m-t-10">Important: If you have duplicate records, only one will be saved.</p>
+              
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="row">
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>First Name</mat-label>
+            <input matInput formControlName="fName">
+            <mat-icon matSuffix>face</mat-icon>
+            <mat-error *ngIf="keywordBlackForm.get('fName').hasError('required')">
+              First Name is required
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Last Name</mat-label>
+            <input matInput formControlName="lName">
+            <mat-icon matSuffix>face</mat-icon>
+            <mat-error *ngIf="keywordBlackForm.get('lName').hasError('required')">
+              Last Name is required
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-2">
+          <div class="m-b-20">
+            <mat-label class="mr-3">Gender:</mat-label>
+            <mat-radio-group aria-label="Select gender" formControlName="gender" required>
+              <mat-radio-button value="male">Male</mat-radio-button>
+              <mat-radio-button value="female">Female</mat-radio-button>
+              <mat-error *ngIf="keywordBlackForm.get('gender').hasError('required')">
+                Select gender
+              </mat-error>
+            </mat-radio-group>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput formControlName="email" required>
+            <mat-icon matSuffix>email</mat-icon>
+            <mat-error
+              *ngIf="keywordBlackForm.get('email').hasError('required') || keywordBlackForm.get('email').touched">
+              Please enter a valid email address
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Birth date</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="bDate">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+            <mat-error *ngIf="keywordBlackForm.get('bDate').hasError('required')">
+              Please select date
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Mobile</mat-label>
+            <input matInput formControlName="mobile" type="number">
+            <mat-icon matSuffix>phone</mat-icon>
+            <mat-error *ngIf="keywordBlackForm.get('mobile').hasError('required')">
+              Mobile is required
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class=" col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+          <mat-form-field class="example-full-width " appearance="outline">
+            <mat-label>Country</mat-label>
+            <mat-select formControlName="country" required>
+              <mat-option [value]="'india'">
+                India
+              </mat-option>
+              <mat-option [value]="'usa'">
+                USA
+              </mat-option>
+              <mat-option [value]="'france'">
+                France
+              </mat-option>
+              <mat-option [value]="'germany'">
+                Germany
+              </mat-option>
+              <mat-option [value]="'spain'">
+                Spain
+              </mat-option>
+              <mat-option [value]="'turkey'">
+                Turkey
+              </mat-option>
+              <mat-option [value]="'other'">
+                Other
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="keywordBlackForm.get('country').hasError('required')">
+              Country Name is required
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-2">
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Address</mat-label>
+            <textarea matInput formControlName="address"></textarea>
+          </mat-form-field>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-2">
+          <div class="example-button-row">
+            <button mat-raised-button color="primary" [type]="submit" [disabled]="!keywordBlackForm.valid"
+              [mat-dialog-close]="1" (click)="confirmAdd()">Save</button>
+            <button mat-raised-button color="warn" (click)="onNoClick()" tabindex="-1">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

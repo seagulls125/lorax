@@ -1,0 +1,65 @@
+<section class="content">
+  <div class="container-fluid">
+
+      <!-- breadcrumb -->
+      <div class="block-header">
+          <div class="row">
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                  <ul class="breadcrumb breadcrumb-style ">
+                    <li class="breadcrumb-item">
+                      <h4 class="page-title">Categories</h4>
+                    </li>
+                    <li class="breadcrumb-item bcrumb-1">
+                      <a routerLink="/dashboard/main">
+                        <i class="fas fa-home"></i> Home</a>
+                    </li>
+                    <li class="breadcrumb-item active">Product Pool</li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+      <!-- end breadcrumb -->
+
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="header">
+              <div class="row">
+                <div class="col-12 col-lg-9">
+                  <h2><strong>Common Product Pool</strong><span class="label bg-blue-grey ml-2">54</span></h2>
+                </div>
+                <div class="col-12 col-lg-3">
+                  <button mat-raised-button color="primary" class="mr-2">
+                    <i class="material-icons">file_download</i>
+                    Download list
+                  </button>
+                  <mat-form-field class="" appearance="outline">
+                    <mat-label>Country</mat-label>
+                    <mat-select>
+                      <mat-option value="option1">U A E</mat-option>
+                      <mat-option value="option2">U S D</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+
+              </div>
+            </div>
+            <div class="body">
+              <p>
+                We read the product warning emails sent by Amazon to SellerRunning users and add them to the common brand pool. In this way, we aim to minimize "Policy Warning" notifications that may come from Amazon in the future and to make your account safer by detecting problematic brands/products in advance, thanks to other SellerRunning users even if they are not in your intentory. You can add brands to your <a routerLink="/">Brand black list</a> by selecting the brands from the pool.
+              </p>
+              <div>
+                <i class="material-icons mr-2 pull-left">error_outline</i>Important: In order for these features to work propoerly, please make sure that you have completed the steps in the <a routerLink="/">Feedback Settings</a> for all your stores completely.
+              </div>
+            </div>
+            <div>
+              <app-product-pool-table></app-product-pool-table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+      
+  </div>
+</section>

@@ -1,0 +1,68 @@
+<section class="content">
+  <div class="container-fluid">
+
+      <!-- breadcrumb -->
+      <div class="block-header">
+          <div class="row">
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                  <ul class="breadcrumb breadcrumb-style ">
+                    <li class="breadcrumb-item">
+                      <h4 class="page-title">Categories</h4>
+                    </li>
+                    <li class="breadcrumb-item bcrumb-1">
+                      <a routerLink="/dashboard/main">
+                        <i class="fas fa-home"></i> Home</a>
+                    </li>
+                    <li class="breadcrumb-item active">Categories Black List</li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+      <!-- end breadcrumb -->
+
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="header">
+              <div class="row">
+                <div class="col-12 col-lg-9">
+                  <h2><strong>Categories Black List</strong><span class="label bg-blue-grey ml-2">54</span></h2>
+                </div>
+                <div class="col-12 col-lg-3">
+                  <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Country</mat-label>
+                    <mat-select>
+                      <mat-option value="option1">U A E</mat-option>
+                      <mat-option value="option2">U S A</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+
+              </div>
+              <div>
+                <div class="pull-right">
+                  <button mat-raised-button color="primary" class="mr-2">
+                    <i class="material-icons">file_download</i>
+                    Download list
+                  </button>
+                  <button mat-raised-button color="primary" (click)="addNew()">
+                    <i class="material-icons">add</i>
+                    Add New
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="body">
+              <p>
+                The categories you enter must be the main category of products. The products of the categories you have added to the black list are never transferred to your store, if they exist in your store, they will be deleted immediately.
+              </p>
+              <app-category-black-table></app-category-black-table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+      
+  </div>
+</section>

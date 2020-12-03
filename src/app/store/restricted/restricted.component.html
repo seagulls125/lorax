@@ -1,0 +1,68 @@
+<section class="content">
+  <div class="container-fluid">
+
+      <!-- breadcrumb -->
+      <div class="block-header">
+          <div class="row">
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                  <ul class="breadcrumb breadcrumb-style ">
+                    <li class="breadcrumb-item">
+                      <h4 class="page-title">Store Inventory</h4>
+                    </li>
+                    <li class="breadcrumb-item bcrumb-1">
+                      <a routerLink="/dashboard/main">
+                        <i class="fas fa-home"></i> Home</a>
+                    </li>
+                    <li class="breadcrumb-item active">Restricted Keywords</li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+      <!-- end breadcrumb -->
+
+
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="card">
+            <div class="header">
+              <div class="row">
+                <div class="col-12 col-lg-9">
+                  <h2><strong>Restricted Keywords</strong><span class="label bg-blue-grey ml-2">54</span></h2>
+                </div>
+                <div class="col-12 col-lg-3">
+                  <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Country</mat-label>
+                    <mat-select>
+                      <mat-option value="option1">U A E</mat-option>
+                      <mat-option value="option2">U S A</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+
+              </div>
+              <div>
+                <div class="pull-right">
+                  <button mat-raised-button color="primary" class="mr-2">
+                    <i class="material-icons">file_download</i>
+                    Download list
+                  </button>
+                  <button mat-raised-button color="primary" (click)="addNew()">
+                    <i class="material-icons">add</i>
+                    Add New
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="body">
+              <p>You can minimize "Suspected Intellectual Property Violations" alerts by blocking certain workds in the title of the products. If the keywords you add to this list are in the title of your products on Amazon.com, these products will be removed from your store. The keywords or products you add are removed from your store after a certain period of time. This period is maximum 6 hours.</p>
+              <app-keyword-black-table></app-keyword-black-table>
+            </div>
+            
+          </div>
+          
+        </div>
+        
+      </div>
+      
+  </div>
+</section>

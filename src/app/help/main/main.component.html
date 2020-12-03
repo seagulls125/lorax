@@ -1,0 +1,142 @@
+<section class="content">
+  <div class="container-fluid">
+    <div class="block-header">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <ul class="breadcrumb breadcrumb-style ">
+            <li class="breadcrumb-item">
+              <h4 class="page-title">Blank</h4>
+            </li>
+            <li class="breadcrumb-item bcrumb-1">
+              <a routerLink="/dashboard/main">
+                <i class="fas fa-home"></i> Home</a>
+            </li>
+            <li class="breadcrumb-item active">Help</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="row clearfix">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="card">
+          <div class="header">
+            <h2><strong>Help</strong> Page</h2>
+          </div>
+          <div class="body">
+            <h2>
+              <b>You can contact us at anytime. We work for you 24/7.</b>
+            </h2>
+            <hr>
+            <form class="register-form m-4" [formGroup]="register" (ngSubmit)="onRegister()">
+              <div class="row">
+                <div class="col-12">
+                  <p>Contact reason</p>
+                  <mat-form-field class="example-full-width" appearance="outline">
+                    <input matInput formControlName="reason" required>
+                    <mat-icon matSuffix>face</mat-icon>
+                    <mat-error *ngIf="register.get('reason').hasError('required')">
+                        Contact Reason is required
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-2">
+                  <p>Support Reason</p>
+                  <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-select formControlName="support" required>
+                        <mat-option [value]="'Genel'">
+                            Genel
+                        </mat-option>
+                    </mat-select>
+                    <mat-icon matSuffix>flag</mat-icon>
+                    <mat-error *ngIf="register.get('support').hasError('required')">
+                        Support reason is required
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-2">
+                  <p>Please describe your issue.</p>
+                  <mat-form-field class="example-full-width" appearance="outline">
+                    <textarea matInput formControlName="issue"></textarea>
+                    <mat-error *ngIf="register.get('issue').hasError('required')">
+                      Please indicate the ASIN or order number you are having problems with.
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+              </div>
+              <hr>
+
+              <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-2">
+                  <p>Email address</p>
+                  <mat-form-field class="example-full-width" appearance="outline">
+                    <input matInput formControlName="email" required>
+                    <mat-icon matSuffix>email</mat-icon>
+                    <mat-error
+                        *ngIf="register.get('email').hasError('required') || register.get('email').touched">
+                        Please enter a valid email address
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-12">
+                  <p>Callback number(optional, but recommended)</p>
+                  <mat-form-field class="example-full-width" appearance="outline">
+                    <input matInput formControlName="number">
+                    <mat-icon matSuffix>face</mat-icon>
+                  </mat-form-field>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-12 col-lg-6">
+                  <div class="card">
+                    <div class="body" style="background-color: rgba(0,0,0,0.08);">
+                      <p><b>Priority</b></p>
+                      <p>This issue is urgent and requires immediate attention.</p>
+                      <mat-slide-toggle></mat-slide-toggle>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-12">
+                  <p><b>Upload files</b></p>
+                  <p class="text-mute">Only png, jpg, gif files are allowed.</p>
+                  <mat-form-field class="example-full-width mb-3">
+                    <ngx-mat-file-input #removableInput formControlName="removablefile"
+                        placeholder="Removable Input"></ngx-mat-file-input>
+                    <button mat-icon-button matSuffix *ngIf="!removableInput.empty"
+                        (click)="removableInput.clear($event)">
+                        <mat-icon>clear</mat-icon>
+                    </button>
+                  </mat-form-field>
+
+                </div>
+              </div>
+
+              
+              <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-2 text-center">
+                  <button class="mr-3" mat-raised-button
+                      color="primary">Submit</button>
+                  <button type="button" mat-button>Cancel</button>
+                </div>
+              </div>
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

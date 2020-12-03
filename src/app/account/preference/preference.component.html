@@ -1,0 +1,227 @@
+<section class="content">
+  <div class="container-fluid">
+    <div class="block-header">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <ul class="breadcrumb breadcrumb-style ">
+            <li class="breadcrumb-item">
+              <h4 class="page-title">Blank</h4>
+            </li>
+            <li class="breadcrumb-item bcrumb-1">
+              <a routerLink="/dashboard/main">
+                <i class="fas fa-home"></i> Home</a>
+            </li>
+            <li class="breadcrumb-item bcrumb-2">
+              <a href="#" onClick="return false;">Account</a>
+            </li>
+            <li class="breadcrumb-item active">Settings</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="row clearfix">
+      <div class="col-12">
+        <div class="card">
+          <div class="header">
+            <h2><strong>Store Preferences</strong></h2>
+          </div>
+          <div class="body">
+            <div class="row">
+              <div class="col-12 col-lg-6">
+                <div class="row">
+                  <div class="col-1">
+                    <mat-slide-toggle class="example-margin"></mat-slide-toggle>
+                  </div>
+                  <div class="col-11">
+                    <h5><b>Automatic order confirmation</b></h5>
+                    <p>Your orders are continuously tracked and automatically confirmed via Amazon.</p>
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-1">
+                    <mat-slide-toggle class="example-margin"></mat-slide-toggle>
+                  </div>
+                  <div class="col-11">
+                    <h5><b>Automatic pre-order confirmation</b></h5>
+                    <p>When shiping is delayed, the order is confirmed without a tracking number.</p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-1">
+                    arrow
+                  </div>
+                  <div class="col-11">
+                    <div class="row">
+                      <div class="col-1">
+                        <mat-slide-toggle class="example-margin"></mat-slide-toggle>
+                      </div>
+                      <div class="col-11">
+                        Confirm <input type="text" style="width: 50px;"> hour after completing the order.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-1">
+                    <mat-slide-toggle class="example-margin"></mat-slide-toggle>
+                  </div>
+                  <div class="col-11">
+                    <h5><b>Automatic price update</b></h5>
+                    <p>If there is a change in the price of the products, prices will be updated instantly. To make price updates only at certain times, click here.</p>
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-1">
+                    <mat-slide-toggle class="example-margin"></mat-slide-toggle>
+                  </div>
+                  <div class="col-11">
+                    <h5><b>Automatic stock update</b></h5>
+                    <p>If the stock of products changes, stocks will be updated instantly.</p>
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-1">
+                    <mat-slide-toggle class="example-margin"></mat-slide-toggle>
+                  </div>
+                  <div class="col-11">
+                    <h5><b>Automatic product removal</b></h5>
+                    <p>If the products don't meet your criteria, they will be removed from your store.</p>
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-1">
+                    <mat-slide-toggle class="example-margin"></mat-slide-toggle>
+                  </div>
+                  <div class="col-11">
+                    <h5><b>Automatic product insert</b></h5>
+                    <p>If the removed products meet your criteria, they will be added back to your store.</p>
+                    
+                  </div>
+                  
+                </div>
+                <div class="row">
+                  <div class="col-1">
+                    arrow
+                  </div>
+                  <div class="col-11">
+                    <div class="row">
+                      <div class="col-1">
+                        <mat-slide-toggle class="example-margin"></mat-slide-toggle>
+                      </div>
+                      <div class="col-11">
+                        <h5><b>Approval required for new products</b></h5>
+                        
+                      </div>
+                    </div>
+                    
+                    
+                  </div>
+                </div>
+
+                
+              </div>
+
+              <div class="col-12 col-lg-6">
+                <div class="row">
+                  <div class="col-12 col-lg-4 text-right">
+                    <h5 style="margin-top: 1.5rem;"><b>Import fee calculation</b></h5>
+                    
+                  </div>
+                  <div class="col-12 col-lg-8">
+                    <div>
+                      <mat-slide-toggle style="margin-top: 1.5rem;">Enable import fee</mat-slide-toggle>
+                      <mat-form-field class="pull-right" appearance="outline">
+                        <mat-label>Suffix</mat-label>
+                        <span matPrefix>
+                          <mat-icon class="mr-2">attach_money</mat-icon>
+                        </span>
+                        <input matInput placeholder="EX: 6762 " suffix=" $" mask="0000" />
+                      </mat-form-field>
+                    </div><br>
+                    <p>
+                      If no import fee is specified on the Amazon.com product detail page of the products, Import fee is calculated on the price on Amazon.com and added to the product sales price. This feature is used only when the <a routerLink="">"Filter products with no import fee" filter </a> is not enabled.
+                    </p>
+                  </div>
+
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-12 col-lg-4 text-right">
+                    <h5 style="margin-top: 1.5rem;"><b>Common pools</b></h5>
+                  </div>
+                  <div class="col-12 col-lg-8">
+                    <mat-slide-toggle style="margin-top: 1.5rem;">Enable import fee</mat-slide-toggle><br><br>
+                    <p>
+                      Enable automatically adding to <a routerLink="">restricted products</a> by reading Amazon alert emails sent by you.
+                    </p>
+                    <div class="row">
+                      <div class="col-2">
+                        image
+                      </div>
+                      <div class="col-10">
+                        <mat-slide-toggle style="margin-top: 1.5rem;">Block brands of these products</mat-slide-toggle><br><br>
+                        <p>
+                          Enable if you want the brands of the above products to be detected by SellerRunning and added to <a routerLink="">brand black list</a> automatically.
+                        </p>
+                      </div>
+                    </div>
+                    <mat-slide-toggle style="margin-top: 1.5rem;">Enable auto brand blocking</mat-slide-toggle><br><br>
+                    <p>
+                      Enable automatically adding to <a routerLink="">brand black list</a> by reading Amazon alert emails sent by you.
+                    </p>
+                    <div class="card" style="background-color: rgba(0,0,0,0.08);">
+                      <div class="body">
+                        <i class="material-icons">warning</i>&nbsp;
+                        Important: In order for these features to work properly, please make sure that you have completed the steps in the <a routerLink>Feedback settings</a> for all your stores completely.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-12 col-lg-4 text-right">
+                    <h5 style="margin-top: 1.5rem;"><b>Handling time</b></h5>
+                    
+                  </div>
+                  <div class="col-12 col-lg-8">
+                    <div>
+                      <mat-slide-toggle style="margin-top: 1.5rem;">Enable handling time</mat-slide-toggle>
+                      <mat-form-field class="pull-right" appearance="outline">
+                        <mat-label>Select</mat-label>
+                          <mat-select>
+                              <mat-option value="option1">Option 1</mat-option>
+                              <mat-option value="option2">Option 2</mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                    </div><br>
+                    <p>
+                      Indicates the time, in days, between when you receive an order for an item and when you can ship the item. The default leadtime-to-ship is one to two business days. Use this field if your leadtime-to-ship is greater than two business days.
+                    </p>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+
+            <div class="row">
+              <div class="text-center col-12 example-button-row">
+                <button mat-stroked-button color="warn">Remove my store</button>
+                <button mat-flat-button color="primary">Save Changes</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+      
+    </div>
+
+  </div>
+</section>
